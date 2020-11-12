@@ -1,5 +1,7 @@
 package com.designpatterns.structural.composite;
 
+import java.util.Iterator;
+
 public class Menu extends MenuComponent{
 
     public Menu(String name, String url) {
@@ -18,6 +20,13 @@ public class Menu extends MenuComponent{
     }
 
     public String toString() {
-        return null;
+        StringBuilder builder = new StringBuilder();
+        builder.append(print(this));
+        Iterator<MenuComponent> iterator = menuComponents.iterator();
+        while (iterator.hasNext()) {
+            MenuComponent menuComponent = iterator.next();
+            builder.append(menuComponent.toString());
+        }
+        return builder.toString();
     }
 }
