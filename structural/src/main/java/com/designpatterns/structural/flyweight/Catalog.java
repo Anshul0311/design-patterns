@@ -6,7 +6,7 @@ import java.util.Map;
 //Catalog acts as a factory and cache for flyweight objects
 public class Catalog {
 
-    private Map<String,Item> items = new HashMap<String, Item>();
+    private Map<String,Item> items = new HashMap<>();
 
     public Item lookup(String itemName) {
         if (!items.containsKey(itemName)) {
@@ -16,6 +16,5 @@ public class Catalog {
     }
 
     public int totalItemsMade() {
-        return items.size();
-    }
+        return items.size(); }
 }
