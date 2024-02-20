@@ -20,4 +20,14 @@ public class LazySingletonThreadSafe {
         }
         return instance;
     }
+
+    // Implement readResolve to return the singleton instance during deserialization
+    protected Object readResolve() {
+        return instance;
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        throw new CloneNotSupportedException("Cloning of singleton is not allowed");
+    }
 }

@@ -1,6 +1,6 @@
 package com.designpatterns.creational.factorymethod;
 
-public class JSONMessage extends Message {
+public class JSONMessage extends Message<String> {
 
     @Override
     public String content() {

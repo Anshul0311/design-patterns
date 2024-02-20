@@ -1,8 +1,8 @@
 package com.designpatterns.creational.factorymethod;
 
-public abstract class MessageCreator {
+public abstract class MessageCreator<T> {
 
-    public Message getMessage() {
+    public Message<T> getMessage() {
         Message msg = createMessage();
         msg.addDefaultHeaders();
         msg.encrypt();
@@ -13,5 +13,5 @@ public abstract class MessageCreator {
      * Factory method
      * @return
      */
-    public abstract Message createMessage();
+    public abstract Message<T> createMessage();
 }
